@@ -1,0 +1,25 @@
+.search {
+    cursor: inherit;
+    color: rgba(0, 0, 0, .87);
+    height: 4em !important;
+}
+
+.search ::ng-deep .mat-option-text {
+    padding-top: 10px;
+}
+
+.search ::ng-deep .mat-pseudo-checkbox {
+    display: none;
+}
+
+.search ::ng-deep .mat-option-ripple {
+    display: none;
+}
+
+.search:hover {
+    background: inherit;
+}
+::ng-deep .mat-spinner {
+    bottom: -5px;
+    position: relative;
+}

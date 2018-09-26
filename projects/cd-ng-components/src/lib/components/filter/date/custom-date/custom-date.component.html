@@ -1,0 +1,27 @@
+<form [formGroup]="formGroup" (ngSubmit)="handleSubmit($event)">
+    <h2 mat-dialog-title>Custom Date</h2>
+    <mat-dialog-content>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field>
+                    <input id="dateFrom" name="dateFrom" [max]="dateToControl.value" matInput [matDatepicker]="fromDatePicker" placeholder="Choose a from date" formControlName="dateFrom">
+                    <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #fromDatePicker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field>
+                    <input id="dateTo" name="dateTo" [min]="dateFromControl.value" [max]="today" matInput [matDatepicker]="toDatePicker" placeholder="Choose a to date" formControlName="dateTo">
+                    <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #toDatePicker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <p>
+            <button mat-dialog-close mat-button color="warn" type="button">Cancel</button>
+            <button mat-button color="primary" type="submit">Apply</button>
+        </p>
+    </mat-dialog-content>
+</form>

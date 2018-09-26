@@ -1,0 +1,8 @@
+.content-icon {
+    bottom: -5px;
+    position: relative;
+}
+
+::ng-deep .prefix .content-icon {
+    margin-right: 3px;
+}

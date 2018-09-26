@@ -1,0 +1,12 @@
+<div class="container">
+  <cdc-search-input [query]="query.query" [placeholder]="placeholder" (inputChange)="handleQueryChange($event)"></cdc-search-input>
+  <cdc-filter-selector [types]="options" [selected]="selectedFilters | map:'id'" (valueChange)="handleSelectedFilterChange($event)"></cdc-filter-selector>
+</div>
+<div>
+  <span *ngFor="let filter of selectedFilters">
+    <cdc-select *ngIf="filter.type === 'select'" [filter]="filter" [query]="query[filter.id]" (valueChange)="handleFilterChange($event, filter.id)"
+      (remove)="handleFilterRemove(filter.id)"></cdc-select>
+    <cdc-date *ngIf="filter.type === 'date'" [query]="query[filter.id]" (valueChange)="handleFilterChange($event, filter.id)"
+      (remove)="handleFilterRemove(filter.id)"></cdc-date>
+  </span>
+</div>

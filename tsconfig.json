@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "cd-ng-components": [
+        "dist/cd-ng-components"
+      ],
+      "cd-ng-components/*": [
+        "dist/cd-ng-components/*"
+      ]
+    }
   }
 }

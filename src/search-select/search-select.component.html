@@ -1,0 +1,25 @@
+<mat-toolbar>Search Select</mat-toolbar>
+<div class="row justify-content-center">
+  <div class="col-10">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Sample</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          <cdc-search-select [items$]="items$" [selected]="selectedItems" placeholder="Select..." (valueChange)="handleChange($event)">
+            <span content-position="prefix">
+              <mat-icon class="content-icon">error</mat-icon>
+            </span>
+            <span content-position="suffix">
+              <mat-icon class="content-icon">delete</mat-icon>
+            </span>
+          </cdc-search-select>
+        </p>
+        <p>
+          <cdc-search-select [items$]="items$" [selected]="selectedItems" placeholder="Select..." (valueChange)="handleChange($event)"></cdc-search-select>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

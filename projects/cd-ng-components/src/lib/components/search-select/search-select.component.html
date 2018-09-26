@@ -1,0 +1,25 @@
+<mat-form-field class="search-select">
+  <span matPrefix class="prefix">
+    <ng-content select="[content-position=prefix]"></ng-content>
+  </span>
+  <mat-select [disabled]="loading" [placeholder]="placeholder" multiple (selectionChange)="handleChange($event)"
+    [(value)]="values">
+    <mat-option disabled="true" value="search" class="search">
+      <cdc-search-input (keydown)="handleSearchClick($event)" (click)="handleSearchClick($event)" [query]="searchQuery"
+        placeholder="Search..." (inputChange)="handleSearchQueryChange($event)"></cdc-search-input>
+    </mat-option>
+    <mat-option [value]="allItemsValue">All</mat-option>
+    <mat-option *ngFor="let item of items$ | async | selectFilter:searchQuery" [value]="item._id">
+      {{ item.name }}
+    </mat-option>
+  </mat-select>
+  <span matSuffix class="suffix">
+    <ng-container *ngIf="loading; then loadingContent; else suffixContent"></ng-container>
+  </span>
+</mat-form-field>
+<ng-template #loadingContent>
+  <mat-spinner [diameter]="20"></mat-spinner>
+</ng-template>
+<ng-template #suffixContent>
+  <ng-content select="[content-position=suffix]"></ng-content>
+</ng-template>

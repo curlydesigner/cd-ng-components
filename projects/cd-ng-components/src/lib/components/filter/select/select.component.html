@@ -1,0 +1,7 @@
+<cdc-search-select [items$]="filter.items$" [selected]="query.values" allItemsValue="all" (valueChange)="handleChange($event)">
+  <cdc-operator content-position="prefix" *ngIf="filter.operators" [operators]="filter.operators" [operator]="query?.operator"
+    (change)="handleOperatorChange($event)"></cdc-operator>
+  <button content-position="suffix" mat-button matSuffix mat-icon-button aria-label="Remove" (click)="handleRemove($event)">
+    <mat-icon>clear</mat-icon>
+  </button>
+</cdc-search-select>

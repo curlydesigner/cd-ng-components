@@ -1,0 +1,10 @@
+<mat-form-field>
+    <mat-select placeholder="Date Range" (selectionChange)="handleChange($event)" [(value)]="selected">
+        <mat-option *ngFor="let item of items" [value]="item">
+            {{ item }}
+          </mat-option>
+    </mat-select>
+    <button mat-button matSuffix mat-icon-button aria-label="Remove" (click)="remove.emit($event)">
+        <mat-icon>clear</mat-icon>
+    </button>
+  </mat-form-field>

@@ -1,0 +1,7 @@
+.mat-spinner{margin-bottom: -5px;}
+.search{cursor: inherit; color:rgba(0,0,0,.87);}
+.search ::ng-deep .mat-pseudo-checkbox{display: none;}
+.search ::ng-deep .mat-option-ripple{display: none;}
+.search:hover {
+    background: inherit;
+}

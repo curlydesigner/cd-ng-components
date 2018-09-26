@@ -1,0 +1,7 @@
+<mat-form-field floatLabel="never">
+  <input matInput [placeholder]="placeholder" autocomplete="off" [(ngModel)]="query" (ngModelChange)="handleQueryChange($event)">
+  <mat-icon matSuffix *ngIf="!query || query?.length === 0">search</mat-icon>
+  <button mat-button matSuffix mat-icon-button *ngIf="query?.length > 0" aria-label="Clear" (click)="handleClear()">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-form-field>

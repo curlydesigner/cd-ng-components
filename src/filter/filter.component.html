@@ -1,0 +1,16 @@
+<mat-toolbar>Filter</mat-toolbar>
+<div class="row justify-content-center">
+  <div class="col-10">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Sample</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <cdc-filter placeholder="Search for..." [options]="filters" [query]="query" (valueChange)="handleFilterChange($event)"></cdc-filter>
+        <div>
+          {{query | json}}
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
